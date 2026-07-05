@@ -33,6 +33,6 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 
 <div align="center">
-<sub>🌾 The banner above is a real SVG — every tree, fish and ripple is a colored <code>0</code> or <code>1</code>.<br/>
+<sub>🌾 The banner above is a real SVG — every tree, fish and flower is a white <code>0</code> or <code>1</code> on black.<br/>
 Regenerate it with <code>python3 gen_garden.py</code>. 🌾</sub>
 </div>
