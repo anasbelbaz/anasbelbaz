@@ -1,5 +1,5 @@
 <div align="center">
 
-<img src="./assets/garden.svg" width="520" alt="A small ASCII-art garden — a smiley sun, two trees, a pond with fish, a cloud and flowers" />
+<img src="./assets/track.svg" width="100%" alt="An animated ASCII race circuit with cars lapping — in loving memory of loving memories" />
 
 </div>
