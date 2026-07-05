@@ -41,8 +41,8 @@ def esc(s): return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;"
 out=[f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}">',
 "<style>text{font-family:Consolas,Menlo,monospace;font-size:%dpx;font-weight:600;fill:#1f2328;white-space:pre;}"
 "@media(prefers-color-scheme:dark){text{fill:#e6edf3;}} .car{font-weight:800;} "
-'.memo{font-family:"Comic Sans MS","Chalkboard SE","Comic Neue","Marker Felt",cursive;'
-"font-weight:700;font-size:22px;}</style>"%FS]
+'.memo{font-family:"Segoe Script","Bradley Hand","Snell Roundhand","Brush Script MT",'
+'"Lucida Handwriting",cursive;font-weight:500;font-size:26px;}</style>'%FS]
 for i,l in enumerate(lines):
     out.append(f'<text x="{PAD}" y="{PAD+i*LH+FS}" xml:space="preserve">{esc(l)}</text>')
 
