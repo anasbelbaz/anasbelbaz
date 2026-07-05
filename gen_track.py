@@ -28,7 +28,6 @@ for i in range(N):
     centre_px.append((PAD+gx*CHW, PAD+gy*LH))
     put(round(gy), round(gx), slope_char(gx2-gx, gy2-gy))
 
-# start / finish checkered line
 gx, gy = point(math.pi/2); gx2, gy2 = point(math.pi/2+0.01)
 px, py = PAD+gx*CHW, PAD+gy*LH
 dx, dy = (gx2-gx)*CHW, (gy2-gy)*LH; L=math.hypot(dx,dy) or 1
@@ -46,20 +45,22 @@ out=[f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" wi
 for i,l in enumerate(lines):
     out.append(f'<text x="{PAD}" y="{PAD+i*LH+FS}" xml:space="preserve">{esc(l)}</text>')
 
-# centered memorial text in the infield
 mx, my = PAD+cx*CHW, PAD+cy*LH
 out.append(f'<text class="memo" x="{mx:.0f}" y="{my-8:.0f}" text-anchor="middle">in loving memory of</text>')
 out.append(f'<text class="memo" x="{mx:.0f}" y="{my+18:.0f}" text-anchor="middle">loving memories...</text>')
 
-# 5 cars scattered randomly around the lap (random phase + speed)
+# ---- little car sprites lapping the circuit ----
+SPRITE = ["  ___  ", "_/o o\\_", " (_)(_)"]     # 3-line side-view car
 pts = centre_px[::6]
 d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for (x,y) in pts) + " Z"
 for k in range(5):
     dur = round(random.uniform(7.5, 11.0), 1)
-    beg = round(-random.uniform(0.0, dur), 1)      # random start position
-    out.append(f'<text class="car" xml:space="preserve">({k+1})'
-               f'<animateMotion dur="{dur}s" begin="{beg}s" repeatCount="indefinite" path="{d}"/></text>')
+    beg = round(-random.uniform(0.0, dur), 1)
+    rows = "".join(
+        f'<text class="car" x="0" y="{off}" text-anchor="middle" xml:space="preserve">{esc(SPRITE[i])}</text>'
+        for i, off in enumerate((-9, 4, 17)))
+    out.append(f'<g>{rows}<animateMotion dur="{dur}s" begin="{beg}s" '
+               f'repeatCount="indefinite" path="{d}"/></g>')
 out.append("</svg>")
 open("assets/track.svg","w").write("\n".join(out))
-print("\n".join(lines))
-print("cars:", [(k+1) for k in range(5)])
+print("\n".join(lines[:2]), "...")
