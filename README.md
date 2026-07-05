@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="./assets/garden.svg" width="100%" alt="A garden scene — a lake with koi, trees, grass, sun and clouds — rendered entirely from binary digits" />
+<img src="./assets/garden.svg" width="520" alt="A small ASCII-art garden — a smiley sun, two trees, a pond with fish, a cloud and flowers" />
 
-# `01001000 01101001` &nbsp;•&nbsp; Hi, I'm Anas 🌿
+# 🌿 Hi, I'm Anas
 
-**A quiet garden grown from ones and zeros.**
+**A little garden, drawn in plain text.**
 
 </div>
 
@@ -33,6 +33,6 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 
 <div align="center">
-<sub>🌾 The banner above is a real SVG — every tree, fish and flower is a white <code>0</code> or <code>1</code> on black.<br/>
+<sub>🌾 The banner above is hand-drawn ASCII art — sun, trees, fish and flowers, on a transparent background.<br/>
 Regenerate it with <code>python3 gen_garden.py</code>. 🌾</sub>
 </div>
